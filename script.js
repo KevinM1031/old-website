@@ -111,12 +111,13 @@ function initializeElements() {
 
 function initializeText() {
     if(sessionStorage.getItem("language") == null) {
-        location.reload();
         writeEnglish();
         sessionStorage.setItem("language", "english");
+        location.reload();
     }
     else if(sessionStorage.getItem("language") == "korean")
         writeKorean();
+    else writeEnglish();
 }
 
 function swapLanguage() {
