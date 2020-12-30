@@ -110,14 +110,12 @@ function initializeElements() {
 }
 
 function initializeText() {
-    if(sessionStorage.getItem("language") == null) {
-        writeEnglish();
-        sessionStorage.setItem("language", "english");
-        window.location.replace(window.location.href);
-    }
-    else if(sessionStorage.getItem("language") == "korean")
+    if(sessionStorage.getItem("language") == "korean")
         writeKorean();
-    else writeEnglish();
+    else {
+        sessionStorage.setItem("language", "english");
+        writeEnglish();
+    }
 }
 
 function swapLanguage() {
