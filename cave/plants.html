@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link href='https://fonts.googleapis.com/css?family=Yanone Kaffeesatz' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Baloo 2' rel='stylesheet'>
+        <title>Kevin1031's Website</title>
+    </head>
+    
+    <body>
+        
+        <img class="background" src="../images/background.jpg" alt="top panel image">
+        
+        <div class="topPanel" style="height: 100vh">
+            <h1>Kevin1031's Personal Website</h1>
+            <p>My Asocial Media Page</p>
+            <canvas id="dragonflyArea"></canvas>
+            
+            <button class="iconBtn" id="flyBtn" onclick="spawnFly()">
+                <image id="flyBtnImg" width="26px"
+                       src="../images/fly_jar.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-500%, 0%);
+                              transform: translate(-500%, 0%);">
+                </image>
+            </button>
+            
+            <button class="iconBtn" id="dragonflyBtn" onclick="spawnDragonfly()">
+                <image id="dragonflyBtnImg" width="26px"
+                       src="../images/dragonfly_jar.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-350%, 0%);
+                              transform: translate(-350%, 0%);">
+                </image>
+            </button>
+            
+            <button class="iconBtn" id="catchBtn" onclick="removeDragonfly()">
+                <image id="catchBtnImg" width="26px"
+                       src="../images/bug_net.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-200%, 0%);
+                              transform: translate(-200%, 0%);">
+                </image>
+            </button>
+        </div>
+
+        <ul class="menuList" id="menu">
+            <li><a id="menu01" href="../index.html"></a></li>
+            <li><a id="menu02" href="../about.html"></a></li>
+            <li><a id="menu03" href="../garage.html"></a></li>
+            <li><a id="menu04" class="currentPage" href="../cave.html"></a></li>
+            <li><a id="menu05" href="../lichens.html"></a></li>
+            
+            <button class="iconBtn" id="boxBtn" onclick="openBox()">
+                <image id="boxBtnImg" width="40px" 
+                       style="position: absolute;
+                              top: 50%;
+                              left: 100%;
+                              transform: translate(-120%, -50%);">
+                </image>
+            </button>
+        </ul>
+        
+        <div class="content" id='content' style="height: 100%">
+            <h3 id="text01"></h3>
+            <p id="text02"></p>
+                        
+            <div class="projects" id="projects">
+                <div class="innerContent" id="proj01">
+                    <h3 id="proj01a"></h3>
+                    <h5 id="proj01s"></h5>
+                    <a target="_blank" href="cave_images/morning_glory_01.jpg">
+                        <image class="projImg" src="cave_images/morning_glory_01.jpg">
+                        </image>
+                    </a>
+                    <p id="proj01t"></p>
+                </div>
+                
+                <p></p>
+                
+                <div class="innerContent" id="proj02">
+                    <h3 id="proj02a"></h3>
+                    <h5 id="proj02s"></h5>
+                    <p id="proj02t"></p>
+                </div>
+                
+                <p></p>
+                
+                <div class="innerContent" id="proj03">
+                    <h3 id="proj03a"></h3>
+                    <h5 id="proj03s"></h5>
+                    <a target="_blank" href="cave_images/columbine_01.jpg">
+                        <image class="projImg" src="cave_images/columbine_01.jpg">
+                        </image>
+                    </a>
+                    <p id="proj03t"></p>
+                </div>
+                
+                <p></p>
+                
+                <div class="innerContent" id="proj04">
+                    <h3 id="proj04a"></h3>
+                    <h5 id="proj04s"></h5>
+                    <a target="_blank" href="cave_images/staghorn_fern_01.jpg">
+                        <image class="projImg" src="cave_images/staghorn_fern_01.jpg">
+                        </image>
+                    </a>
+                    <p id="proj04t"></p>
+                </div>
+                
+                <p></p>
+                
+                <div class="innerContent" id="proj05">
+                    <h3 id="proj05a"></h3>
+                    <h5 id="proj05s"></h5>
+                    <a target="_blank" href="cave_images/balloon_vine_01.jpg">
+                        <image class="projImg" src="cave_images/balloon_vine_01.jpg">
+                        </image>
+                    </a>
+                    <p id="proj05t"></p>
+                </div>
+            </div>
+        </div>
+        
+        <script src="../script.js"></script>
+        
+    </body>
+    
+</html>
