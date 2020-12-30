@@ -21,6 +21,7 @@ if(boxOpen != "true" && boxOpen != "false") {
 // Get other data across page
 var fileName = window.location.pathname.split("/").pop();
 initializeElements();
+initializeText();
 
 // Keep scroll
 let scroll = sessionStorage.getItem("scroll");
@@ -56,8 +57,6 @@ if(parsedFlies != null) {
         return true;
     });
 }
-
-initializeText();
 
 requestAnimationFrame(updateDragonfly);
 
@@ -111,12 +110,13 @@ function initializeElements() {
 }
 
 function initializeText() {
-    if(sessionStorage.getItem("language") == "korean")
-        writeKorean();
-    else {
+    if(sessionStorage.getItem("language") == null) {
+        location.reload();
         writeEnglish();
         sessionStorage.setItem("language", "english");
     }
+    else if(sessionStorage.getItem("language") == "korean")
+        writeKorean();
 }
 
 function swapLanguage() {
