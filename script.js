@@ -21,7 +21,6 @@ if(boxOpen != "true" && boxOpen != "false") {
 // Get other data across page
 var fileName = window.location.pathname.split("/").pop();
 initializeElements();
-initializeText();
 
 // Keep scroll
 let scroll = sessionStorage.getItem("scroll");
@@ -57,6 +56,8 @@ if(parsedFlies != null) {
         return true;
     });
 }
+
+initializeText();
 
 requestAnimationFrame(updateDragonfly);
 
