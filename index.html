@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Yanone Kaffeesatz' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Baloo 2' rel='stylesheet'>
+        <title>Kevin1031's Website</title>
+    </head>
+    
+    <body>
+        
+        <img class="background" src="images/background.jpg" alt="top panel image">
+        
+        
+        <div class="topPanel" id="topPanel" style="height: 100vh">
+            <h1>Kevin1031's Personal Website</h1>
+            <p>My Asocial Media Page</p>
+            <canvas id="dragonflyArea"></canvas>
+            
+            <button class="iconBtn" id="flyBtn" onclick="spawnFly()">
+                <image id="flyBtnImg" width="26px" src="images/fly_jar.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-500%, 0%);
+                              transform: translate(-500%, 0%);">
+                </image>
+            </button>
+            
+            <button class="iconBtn" id="dragonflyBtn" onclick="spawnDragonfly()">
+                <image id="dragonflyBtnImg" width="26px" src="images/dragonfly_jar.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-350%, 0%);
+                              transform: translate(-350%, 0%);">
+                </image>
+            </button>
+            
+            <button class="iconBtn" id="catchBtn" onclick="removeDragonfly()">
+                <image id="catchBtnImg" width="26px" src="images/bug_net.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-200%, 0%);
+                              transform: translate(-200%, 0%);">
+                </image>
+            </button>
+        </div>
+
+        <ul class="menuList" id="menu">
+            <li><a class="currentPage" id="menu01" href="index.html"></a></li>
+            <li><a id="menu02" href="about.html"></a></li>
+            <li><a id="menu03" href="garage.html"></a></li>
+            <li><a id="menu04" href="cave.html"></a></li>
+            <li><a id="menu05" href="lichens.html"></a></li>
+            
+            <button class="iconBtn" id="boxBtn" onclick="openBox()">
+                <image id="boxBtnImg" width="40px" 
+                       style="position: absolute;
+                              top: 50%;
+                              left: 100%;
+                              transform: translate(-120%, -50%);">
+                </image>
+            </button>
+        </ul>
+
+        <div class="content" id="content">
+
+            <h3 id="text01"></h3>
+
+            <p id="text02"></p>
+            
+            <button class="stdBtn" id="tranBtn" onclick="swapLanguage()"
+                    style="display: block">
+            </button>
+            
+            <h3 id="text03"></h3>
+            
+            <div class="innerContent" id="feat01">
+                <a id="feat01a" target="_blank" href="https://github.com/KevinM1031/DynSky"></a>
+                <h5 id="feat01s"></h5>
+                <p id="feat01t"></p>
+                <a id=feat01l></a>
+            </div>
+            
+            <p></p>
+
+            <div class="innerContent" id="feat02">
+                <a id="feat02a" target="_blank" href="https://github.com/KevinM1031/Exponentiation_Bubbles"></a>
+                <h5 id="feat02s"></h5>
+                <p id="feat02t"></p>
+                <button class="stdBtn" id="feat02r" style="margin-top:16px" onclick="
+                    window.open('expbbl/index.html', '_blank');
+                    win.focus();">
+                </button>
+            </div>
+            
+            <p></p>
+            
+            <div class="lastContent" style="padding: 40px;">
+                <a id="facebook" target="_blank"
+                   href="https://www.facebook.com/kevin.min.3192"
+                   style="position: absolute;
+                          left: 50%;
+                          bottom: 24px;
+                          -webkit-transform: translate(-200%, 0%);
+                          transform: translate(-200%, 0%);">
+                    <image id="facebookImg" width="50px" src="images/facebook_icon.png">
+                    </image>
+                </a>
+
+                <a id="discord" target="_blank" 
+                   href="https://discordapp.com/users/430683806928863232/"
+                   style="position: absolute;
+                          left: 50%;
+                          bottom: 24px;
+                          -webkit-transform: translate(-50%, 0%);
+                          transform: translate(-50%, 0%);">
+                    <image id="discordImg" width="50px" src="images/discord_icon.png">
+                    </image>
+                </a>
+
+                <a id="instagram" target="_blank" 
+                   href="https://www.instagram.com/kevinmin1031/"
+                   style="position: absolute;
+                          left: 50%;
+                          bottom: 24px;
+                          -webkit-transform: translate(100%, 0%);
+                          transform: translate(100%, 0%);">
+                    <image id="instagramImg" width="50px" src="images/instagram_icon.png">
+                    </image>
+                </a>
+            </div>
+            
+        </div>
+        
+        <script src="script.js"></script>
+        
+    </body>
+    
+</html>

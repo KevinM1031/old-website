@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Yanone Kaffeesatz' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Baloo 2' rel='stylesheet'>
+        <title>Kevin1031's Website</title>
+    </head>
+    
+    <body>
+        
+        <img class="background" src="images/background.jpg" alt="top panel image">
+        
+        <div class="topPanel" style="height: 100vh">
+            <h1>Kevin1031's Personal Website</h1>
+            <p>My Asocial Media Page</p>
+            <canvas id="dragonflyArea"></canvas>
+
+            <button class="iconBtn" id="flyBtn" onclick="spawnFly()">
+                <image id="flyBtnImg" width="26px" src="images/fly_jar.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-500%, 0%);
+                              transform: translate(-500%, 0%);">
+                </image>
+            </button>
+            
+            <button class="iconBtn" id="dragonflyBtn" onclick="spawnDragonfly()">
+                <image id="dragonflyBtnImg" width="26px" src="images/dragonfly_jar.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-350%, 0%);
+                              transform: translate(-350%, 0%);">
+                </image>
+            </button>
+            
+            <button class="iconBtn" id="catchBtn" onclick="removeDragonfly()">
+                <image id="catchBtnImg" width="26px" src="images/bug_net.png" 
+                       style="position: absolute;
+                              bottom: 0%;
+                              left: 100%;
+                              -ms-transform: translate(-200%, 0%);
+                              transform: translate(-200%, 0%);">
+                </image>
+            </button>
+        </div>
+
+        <ul class="menuList" id="menu">
+            <li><a id="menu01" href="index.html"></a></li>
+            <li><a id="menu02" href="about.html"></a></li>
+            <li><a id="menu03" href="garage.html"></a></li>
+            <li><a id="menu04" class="currentPage" href="cave.html"></a></li>
+            <li><a id="menu05" href="lichens.html"></a></li>
+            
+            <button class="iconBtn" id="boxBtn" onclick="openBox()">
+                <image id="boxBtnImg" width="40px" 
+                       style="position: absolute;
+                              top: 50%;
+                              left: 100%;
+                              transform: translate(-120%, -50%);">
+                </image>
+            </button>
+        </ul>
+        
+        <div class="content" id='content'>
+            <h3 id="text01"></h3>
+            <p id="text02"></p>
+                        
+            <div class="innerContent" id="cata01">
+                <a id="cata01a" href="cave/artmaking.html"></a>
+                <h5 id="cata01s"></h5>
+                <p id="cata01t"></p>
+            </div>
+            
+            <p></p>
+            
+            <div class="innerContent" id="cata02">
+                <a id="cata02a" href="cave/astrophotography.html"></a>
+                <h5 id="cata02s"></h5>
+                <p id="cata02t"></p>
+            </div>
+            
+            <p></p>
+            
+            <div class="innerContent" id="cata03">
+                <a id="cata03a" href="cave/computing.html"></a>
+                <h5 id="cata03s"></h5>
+                <p id="cata03t"></p>
+            </div>
+            
+            <p></p>
+            
+            <div class="innerContent" id="cata04">
+                <a id="cata04a" href="cave/engineering.html"></a>
+                <h5 id="cata04s"></h5>
+                <p id="cata04t"></p>
+            </div>
+            
+            <p></p>
+            
+            <div class="innerContent" id="cata05">
+                <a id="cata05a" href="cave/pets.html"></a>
+                <h5 id="cata05s"></h5>
+                <p id="cata05t"></p>
+            </div>
+            
+            <p></p>
+            
+            <div class="innerContent" id="cata06">
+                <a id="cata06a" href="cave/plants.html"></a>
+                <h5 id="cata06s"></h5>
+                <p id="cata06t"></p>
+            </div>
+            
+            <p></p>
+            
+            <div class="innerContent" id="cata07">
+                <a id="cata07a" href="cave/random.html"></a>
+                <h5 id="cata07s"></h5>
+                <p id="cata07t"></p>
+            </div>
+            
+            <p></p>
+            
+            <div class="innerContent" id="cata08">
+                <a id="cata08a" href="cave/video_games.html"></a>
+                <h5 id="cata08s"></h5>
+                <p id="cata08t"></p>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+        
+    </body>
+    
+</html>
