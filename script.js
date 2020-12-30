@@ -113,7 +113,7 @@ function initializeText() {
     if(sessionStorage.getItem("language") == null) {
         writeEnglish();
         sessionStorage.setItem("language", "english");
-        location.reload();
+        window.location.replace(window.location.href);
     }
     else if(sessionStorage.getItem("language") == "korean")
         writeKorean();
