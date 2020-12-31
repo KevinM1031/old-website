@@ -239,7 +239,7 @@ function updateFunc() {
                 bubbles.push(new Bubble(300, 500, -defaultBubbleSpd, blLvL,
                                         '#ffffff', 1, 1, 1, 1, blLvL*5));
                 bubbles.push(new Bubble(-300, 500, defaultBubbleSpd, blLvR,
-                                        '#fffff', 1, 1, 1, 1, blLvR*5));
+                                        '#ffffff', 1, 1, 1, 1, blLvR*5));
 
                 // Yellow "fast" bubbles
                 if((round+1)%3 == 0) {
