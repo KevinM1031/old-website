@@ -217,6 +217,7 @@ function updateFunc() {
                     player.jmp = defaultPlayerJmp;
                     player.frcUpNum = 0;
                     player.frc = defaultFriction;
+                    player.lives = 3;
                     freezeBubbles = true;
                     roundCooldown = defaultRoundCooldown;
                     round = 0;
@@ -1812,11 +1813,7 @@ function Bubble(x, y, xV, lv, color, radMult, hpMult, dmgMult, jmpMult, worth) {
             let rYVel = getRandomInt(-this.rad, this.rad)*0.2;
             let r = getRandomInt(1, 4);
             
-            if(this.color == '#000000')
-                particles.push(new Particle(this.xPos, this.yPos, rXVel, rYVel, 0, 0,
-                                            r, 20, '#ffffff'));
-            else
-                particles.push(new Particle(this.xPos, this.yPos, rXVel, rYVel, 0, 0,
+            particles.push(new Particle(this.xPos, this.yPos, rXVel, rYVel, 0, 0,
                                             r, 20, this.color));
         }
     };
