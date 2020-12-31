@@ -1681,6 +1681,22 @@ function Dragonfly(x, y, xv, yv, t, s, dir, isGone, act, actDur) {
     this.IDLE_MAX = 150;
     
     this.img = new Image();
+    this.img1 = new Image();
+    this.img1.src = "../images/dragonfly1.png";
+    this.img1f = new Image();
+    this.img1f.src = "../images/dragonfly1f.png";
+    this.img2 = new Image();
+    this.img2.src = "../images/dragonfly2.png";
+    this.img2f = new Image();
+    this.img2f.src = "../images/dragonfly2f.png";
+    this.img3 = new Image();
+    this.img3.src = "../images/dragonfly3.png";
+    this.img3f = new Image();
+    this.img3f.src = "../images/dragonfly3f.png";
+    this.img4 = new Image();
+    this.img4.src = "../images/dragonfly4.png";
+    this.img4f = new Image();
+    this.img4f.src = "../images/dragonfly4f.png";
     
     this.update = function() {
         
@@ -1770,23 +1786,23 @@ function Dragonfly(x, y, xv, yv, t, s, dir, isGone, act, actDur) {
         switch(this.state) {
             case 1:
                 if(this.direction == "left")
-                    this.img.src = "../images/dragonfly1f.png";
-                else this.img.src = "../images/dragonfly1.png";
+                    this.img = this.img1f;
+                else this.img = this.img1;
                 break;
             case 2:
                 if(this.direction == "left")
-                    this.img.src = "../images/dragonfly2f.png";
-                else this.img.src = "../images/dragonfly2.png";
+                    this.img = this.img2f;
+                else this.img = this.img2;
                 break;
             case 3:
                 if(this.direction == "left")
-                    this.img.src = "../images/dragonfly3f.png";
-                else this.img.src = "../images/dragonfly3.png";
+                    this.img = this.img3f;
+                else this.img = this.img3;
                 break;
             case 4:
                 if(this.direction == "left")
-                    this.img.src = "../images/dragonfly4f.png";
-                else this.img.src = "../images/dragonfly4.png";
+                    this.img = this.img4f;
+                else this.img = this.img4;
                 break;
         }
         context.drawImage(this.img, this.x, this.y, this.width, this.height);
@@ -1827,6 +1843,14 @@ function Fly(x, y, xv, yv, t, s, dir, isDead, act, actDur) {
     this.IDLE_MAX = 10;
     
     this.img = new Image();
+    this.img1 = new Image();
+    this.img1.src = "../images/fly1.png";
+    this.img2 = new Image();
+    this.img2.src = "../images/fly2.png";
+    this.img3 = new Image();
+    this.img3.src = "../images/fly3.png";
+    this.img4 = new Image();
+    this.img4.src = "../images/fly4.png";
     
     this.update = function() {
         
@@ -1900,16 +1924,16 @@ function Fly(x, y, xv, yv, t, s, dir, isDead, act, actDur) {
         // Drawing image
         switch(this.state) {
             case 1:
-                this.img.src = "../images/fly1.png";
+                this.img = this.img1;
                 break;
             case 2:
-                this.img.src = "../images/fly2.png";
+                this.img = this.img2;
                 break;
             case 3:
-                this.img.src = "../images/fly3.png";
+                this.img = this.img3;
                 break;
             case 4:
-                this.img.src = "../images/fly4.png";
+                this.img = this.img4;
                 break;
         }
         context.drawImage(this.img, this.x, this.y, this.width, this.height);
