@@ -4459,10 +4459,14 @@ document.addEventListener('keydown', function(event) {
 });
 
 document.addEventListener('keyup', function(event) {
-    if(event.keyCode == KEY_A)
+    if(event.keyCode == KEY_A) {
         keyStatus_A = false;
-    if(event.keyCode == KEY_D)
+        if(keyStatus_D) player.moveRight();
+    }
+    if(event.keyCode == KEY_D) {
         keyStatus_D = false;
+        if(keyStatus_A) player.moveLeft();
+    }
     if(event.keyCode == KEY_W)
         keyStatus_W = false;
 });
