@@ -1541,7 +1541,7 @@ function Player(x, y) {
             let text = "+" + hp;
             let rXVel = getRandomInt(-5, 5)*0.1;
             let rYVel = getRandomInt(-5, 5)*0.1;
-            let r = Math.floor(5*Math.log(hp));
+            let r = Math.floor(10*Math.log(hp));
             floatingTexts.push(new FloatingText(text, this.xPos, this.yPos,
                                rXVel, rYVel, 0, 0, r, 100, '#88ff88'));
         }
