@@ -3446,7 +3446,7 @@ function playsound(type) {
             break;
         case "regen":
             let AUD_regen = AUD_regen_res.cloneNode();
-            AUD_regen.volume = 0.2;
+            AUD_regen.volume = 0.35;
             AUD_regen.play();
             break;
         case "reload_complete":
