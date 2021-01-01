@@ -246,7 +246,7 @@ function updateFunc() {
 
                 // Yellow "fast" bubbles
                 if((round+1)%3 == 0) {
-                    let yeLv = Math.ceil((round+1)/3/2);
+                    let yeLv = Math.ceil(round/2);
                     bubbles.push(new Bubble(250, 550, -3*defaultBubbleSpd, yeLv,
                                             '#ffff00', 1, 1, 1, 0.5, yeLv*10));
                     bubbles.push(new Bubble(-250, 550, 3*defaultBubbleSpd, yeLv,
@@ -255,7 +255,7 @@ function updateFunc() {
 
                 // Magenta "jumpy" bubbles
                 if((round+1)%5 == 0) {
-                    let maLv = Math.ceil((round+1)/5/2);
+                    let maLv = Math.ceil(round/2);
                     bubbles.push(new Bubble(350, 450, -0.5*defaultBubbleSpd, maLv, 
                                             '#ff00ff', 1, 1, 1, 1.7, maLv*15));
                     bubbles.push(new Bubble(-350, 450, 0.5*defaultBubbleSpd, maLv, 
@@ -264,7 +264,7 @@ function updateFunc() {
 
                 // Red "huge" bubbles
                 if((round+1)%6 == 0) {
-                    let reLv = Math.ceil((round+1)/6/2);
+                    let reLv = Math.ceil(round/2);
                     bubbles.push(new Bubble(150, 600, -1.5*defaultBubbleSpd, reLv, 
                                             '#ff0000', 2, 1.5, 1, 1, reLv*20));
                     bubbles.push(new Bubble(-150, 600, 1.5*defaultBubbleSpd, reLv, 
@@ -273,7 +273,7 @@ function updateFunc() {
 
                 // Gray "tanky" bubbles
                 if((round+1)%8 == 0) {
-                    let grLv = Math.ceil((round+1)/8/2);
+                    let grLv = Math.ceil(round/2);
                     bubbles.push(new Bubble(200, 500, -defaultBubbleSpd, grLv,
                                             '#888888', 0.5, 3, 1, 1, grLv*25));
                     bubbles.push(new Bubble(-200, 500, defaultBubbleSpd, grLv,
@@ -282,7 +282,7 @@ function updateFunc() {
 
                 // Cyan "powerful" bubbles
                 if((round+1)%9 == 0) {
-                    let cyLv = Math.ceil((round+1)/9/2);
+                    let cyLv = Math.ceil(round/2);
                     bubbles.push(new Bubble(300, 400, -0.7*defaultBubbleSpd, cyLv,
                                             '#00ffff', 1, 1, 2.5, 0.7, cyLv*30));
                     bubbles.push(new Bubble(-300, 400, 0.7*defaultBubbleSpd, cyLv,
