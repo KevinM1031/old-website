@@ -123,7 +123,7 @@ function updateFunc() {
         if(round > 0 && roundCooldown == 0 && bubbles.length == 0 && !player.isDead) {
 
             roundComplete = true;
-            savedPlayer = player;
+            savedPlayer = JSON.parse(JSON.stringify(player));
             freezeBubbles = true;
             roundCooldown = defaultRoundCooldown;
             playsound("win1");
@@ -179,7 +179,7 @@ function updateFunc() {
                 player.isDead = false;
                                 
                 if(player.lives > 0) {
-                    player = savedPlayer;
+                    player = JSON.parse(JSON.stringify(savedPlayer));
                     player.hp = player.maxHP;
                     bubbles = [];
                     medkits = [];
@@ -3367,86 +3367,86 @@ var AUD_win2_res = new Audio('audio/win2.wav');
 function playsound(type) {
     switch(type) {
         case "bam":
-            let AUD_bam = AUD_bam_res;
+            let AUD_bam = AUD_bam_res.cloneNode();
             AUD_bam.volume = 0.5;
             AUD_bam.play();
             break;
         case "boom":
-            let AUD_boom = AUD_boom_res;
+            let AUD_boom = AUD_boom_res.cloneNode();
             AUD_boom.volume = 0.5;
             AUD_boom.play();
             break;
         case "boom_fire":
-            let AUD_boom_fire = AUD_boom_fire_res;
+            let AUD_boom_fire = AUD_boom_fire_res.cloneNode();
             AUD_boom_fire.volume = 0.5;
             AUD_boom_fire.play();
             break;
         case "brrrrr":
-            let AUD_brrrrr = AUD_brrrrr_res;
+            let AUD_brrrrr = AUD_brrrrr_res.cloneNode();
             AUD_brrrrr.volume = 0.5;
             AUD_brrrrr.play();
             break;
         case "bubble_bounce":
-            let AUD_bubble_bounce = AUD_bubble_bounce_res;
+            let AUD_bubble_bounce = AUD_bubble_bounce_res.cloneNode();
             AUD_bubble_bounce.volume = 0.15;
             AUD_bubble_bounce.play();
             break;
         case "bubble_hit":
-            let AUD_bubble_hit = AUD_bubble_hit_res;
+            let AUD_bubble_hit = AUD_bubble_hit_res.cloneNode();
             AUD_bubble_hit.volume = 0.5;
             AUD_bubble_hit.play();
             break;
         case "bubble_pop":
-            let AUD_bubble_pop = AUD_bubble_pop_res;
+            let AUD_bubble_pop = AUD_bubble_pop_res.cloneNode();
             AUD_bubble_pop.volume = 0.5;
             AUD_bubble_pop.play();
             break;
         case "bullet_hit":
-            let AUD_bullet_hit = AUD_bullet_hit_res;
+            let AUD_bullet_hit = AUD_bullet_hit_res.cloneNode();
             AUD_bullet_hit.volume = 0.5;
             AUD_bullet_hit.play();
             break;
         case "damage":
-            let AUD_damage = AUD_damage_res;
+            let AUD_damage = AUD_damage_res.cloneNode();
             AUD_damage.play();
             break;
         case "pew":
-            let AUD_pew = AUD_pew_res;
+            let AUD_pew = AUD_pew_res.cloneNode();
             AUD_pew.volume = 0.5;
             AUD_pew.play();
             break;
         case "pickup":
-            let AUD_pickup = AUD_pickup_res;
+            let AUD_pickup = AUD_pickup_res.cloneNode();
             AUD_pickup.volume = 0.25;
             AUD_pickup.play();
             break;
         case "pow":
-            let AUD_pow = AUD_pow_res;
+            let AUD_pow = AUD_pow_res.cloneNode();
             AUD_pow.volume = 0.5;
             AUD_pow.play();
             break;
         case "regen":
-            let AUD_regen = AUD_regen_res;
+            let AUD_regen = AUD_regen_res.cloneNode();
             AUD_regen.volume = 0.5;
             AUD_regen.play();
             break;
         case "reload_complete":
-            let AUD_reload_complete = AUD_reload_complete_res;
+            let AUD_reload_complete = AUD_reload_complete_res.cloneNode();
             AUD_reload_complete.volume = 0.5;
             AUD_reload_complete.play();
             break;
         case "reload":
-            let AUD_reload = AUD_reload_res;
+            let AUD_reload = AUD_reload_res.cloneNode();
             AUD_reload.volume = 0.5;
             AUD_reload.play();
             break;
         case "win1":
-            let AUD_win1 = AUD_win1_res;
+            let AUD_win1 = AUD_win1_res.cloneNode();
             AUD_win1.volume = 0.5;
             AUD_win1.play();
             break;
         case "win2":
-            let AUD_win2 = AUD_win2_res;
+            let AUD_win2 = AUD_win2_res.cloneNode();
             AUD_win2.volume = 0.5;
             AUD_win2.play();
             break;
@@ -4492,5 +4492,5 @@ platforms.push(new Platform(-75, 232, PLATFORM_WIDTH, PLATFORM_HEIGHT));
 bubbles.push(new Bubble(300, 500, -defaultBubbleSpd, 2, '#ffffff', 1, 1, 1, 1, 10));
 bubbles.push(new Bubble(-300, 500, defaultBubbleSpd, 2, '#ffffff', 1, 1, 1, 1, 10));
 player = new Player(0, 1000);
-savedPlayer = player;
+savedPlayer = new Player(0, 1000);
 requestAnimationFrame(update);
