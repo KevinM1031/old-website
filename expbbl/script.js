@@ -1833,10 +1833,10 @@ function Bubble(x, y, xV, lv, color, radMult, hpMult, dmgMult, jmpMult, worth) {
     
     this.split = function() {
         if(this.lv > 1) {
-            bubbles.push(new Bubble(this.xPos, this.yPos, -defaultBubbleSpd, this.lv-1, this.color,
+            bubbles.push(new Bubble(this.xPos, this.yPos, -this.xVel, this.lv-1, this.color,
                                     this.radMult, this.hpMult, this.dmgMult,
                                     this.jmpMult, this.worth));
-            bubbles.push(new Bubble(this.xPos, this.yPos, defaultBubbleSpd, this.lv-1, this.color,
+            bubbles.push(new Bubble(this.xPos, this.yPos, this.xVel, this.lv-1, this.color,
                                     this.radMult, this.hpMult, this.dmgMult,
                                     this.jmpMult, this.worth));
         }
