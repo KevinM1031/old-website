@@ -2835,12 +2835,12 @@ function Bullet(x, y, xVel, yVel, dmg, r, color) {
     this.hit = function() {
         this.isHit = true;
         
-        for(let n = 0; n < this.dmg/5; n++) {
-            let rXVel = getRandomInt(-this.dmg/2, this.dmg/2)*0.25;
-            let rYVel = getRandomInt(-this.dmg/2, this.dmg/2)*0.25;
-            let r = getRandomInt(1, 5);
+        for(let n = 0; n < this.dmg/10; n++) {
+            let rXVel = getRandomInt(-this.dmg/3, this.dmg/3)*0.1;
+            let rYVel = getRandomInt(-this.dmg/3, this.dmg/3)*0.1;
+            let r = getRandomInt(0, 3);
             particles.push(new Particle(this.xPos, this.yPos, rXVel, rYVel, 0, 0,
-                                        r, 30, '#ffff00'));
+                                        r, 20, '#ffff00'));
         }
         
         playsound("bullet_hit");
