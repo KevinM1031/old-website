@@ -47,7 +47,6 @@ const KEY_Q = 81;
 const KEY_W = 87;
 
 var player;
-var savedPlayer;
 var bubbles = [];
 var platforms = [];
 var bullets = [];
@@ -123,7 +122,6 @@ function updateFunc() {
         if(round > 0 && roundCooldown == 0 && bubbles.length == 0 && !player.isDead) {
 
             roundComplete = true;
-            savedPlayer = player;
             freezeBubbles = true;
             roundCooldown = defaultRoundCooldown;
             playsound("win1");
@@ -179,7 +177,6 @@ function updateFunc() {
                 player.isDead = false;
                                 
                 if(player.lives > 0) {
-                    player = savedPlayer;
                     player.hp = player.maxHP;
                     bubbles = [];
                     medkits = [];
@@ -189,6 +186,14 @@ function updateFunc() {
                     freezeBubbles = true;
                     roundCooldown = defaultRoundCooldown;
                     round--;
+                    
+                    playsound("win1");
+                    let numCoins = 25;
+                    for(let n = 0; n < numCoins; n++) {
+                        let rXVel = getRandomInt(-200, 200)*0.01;
+                        let rYVel = getRandomInt(-200, 200)*0.01;
+                        coins.push(new Coin(0, 1000, rXVel, rYVel, round*20));
+                    }
                 }
                 
                 else {
