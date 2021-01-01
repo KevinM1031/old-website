@@ -129,7 +129,10 @@ function updateFunc() {
             playsound("win1");
             playsound("win2");
             
-            if(round%10 == 0) player.lifeUp();
+            if(round%10 == 0) {
+                player.lifeUp();
+                savedPlayer.lifeUp();
+            }
 
             let numCoins = 50;
             for(let n = 0; n < numCoins; n++) {
