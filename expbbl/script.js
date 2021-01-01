@@ -134,11 +134,11 @@ function updateFunc() {
                 savedPlayer.lifeUp();
             }
 
-            let numCoins = 50;
+            let numCoins = 25;
             for(let n = 0; n < numCoins; n++) {
                 let rXVel = getRandomInt(-200, 200)*0.01;
                 let rYVel = getRandomInt(-200, 200)*0.01;
-                coins.push(new Coin(0, 1000, rXVel, rYVel, round*10));
+                coins.push(new Coin(0, 1000, rXVel, rYVel, round*20));
             }
         }
 
@@ -189,15 +189,6 @@ function updateFunc() {
                     freezeBubbles = true;
                     roundCooldown = defaultRoundCooldown;
                     round--;
-                    
-                    if(round > 1) {
-                        let numCoins = 50;
-                        for(let n = 0; n < numCoins; n++) {
-                            let rXVel = getRandomInt(-200, 200)*0.01;
-                            let rYVel = getRandomInt(-200, 200)*0.01;
-                            coins.push(new Coin(0, 1000, rXVel, rYVel, round*10));
-                        }
-                    }
                 }
                 
                 else {
@@ -1806,14 +1797,14 @@ function Bubble(x, y, xV, lv, color, radMult, hpMult, dmgMult, jmpMult, worth) {
         
         let numCoins = getRandomInt(minCoins, maxCoins);
         for(let n = 0; n < numCoins; n++) {
-            let rXVel = getRandomInt(-20, 20)*0.01;
-            let rYVel = getRandomInt(-20, 20)*0.01;
+            let rXVel = getRandomInt(-20, 20)*0.03;
+            let rYVel = getRandomInt(-20, 20)*0.03;
             coins.push(new Coin(this.xPos, this.yPos, rXVel, rYVel, this.worth));
         }
         
-        for(n = 0; n < this.rad/4; n++) {
-            let rXVel = getRandomInt(-this.rad, this.rad)*0.2;
-            let rYVel = getRandomInt(-this.rad, this.rad)*0.2;
+        for(n = 0; n < this.rad/2; n++) {
+            let rXVel = getRandomInt(-this.rad, this.rad)*0.4;
+            let rYVel = getRandomInt(-this.rad, this.rad)*0.4;
             let r = getRandomInt(1, 4);
             
             particles.push(new Particle(this.xPos, this.yPos, rXVel, rYVel, 0, 0,
@@ -2826,8 +2817,8 @@ function Bullet(x, y, xVel, yVel, dmg, r, color) {
         this.isHit = true;
         
         for(let n = 0; n < this.dmg/5; n++) {
-            let rXVel = getRandomInt(-this.dmg/2, this.dmg/2)*0.1;
-            let rYVel = getRandomInt(-this.dmg/2, this.dmg/2)*0.1;
+            let rXVel = getRandomInt(-this.dmg/2, this.dmg/2)*0.25;
+            let rYVel = getRandomInt(-this.dmg/2, this.dmg/2)*0.25;
             let r = getRandomInt(1, 5);
             particles.push(new Particle(this.xPos, this.yPos, rXVel, rYVel, 0, 0,
                                         r, 30, '#ffff00'));
@@ -2848,7 +2839,7 @@ function Bullet(x, y, xVel, yVel, dmg, r, color) {
         rYVel = this.yVel*0.1;
         c = getRandomInt(0, 9);
         particles.push(new Particle(this.xPos, this.yPos, rXVel, rYVel, 0, 0,
-                                    2, 30, '#' + c+c+c+c+c+c));
+                                    2, 20, '#' + c+c+c+c+c+c));
     };
     
     this.update = function() {
@@ -3355,89 +3346,107 @@ function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
 }
 
+var AUD_bam_res = new Audio('audio/bam.wav');
+var AUD_boom_res = new Audio('audio/boom.wav');
+var AUD_boom_fire_res = new Audio('audio/boom_fire.wav');
+var AUD_brrrrr_res = new Audio('audio/brrrrr.wav');
+var AUD_bubble_bounce_res = new Audio('audio/bubble_bounce.wav');
+var AUD_bubble_hit_res = new Audio('audio/bubble_hit.wav');
+var AUD_bubble_pop_res = new Audio('audio/bubble_pop.wav');
+var AUD_bullet_hit_res = new Audio('audio/bullet_hit.wav');
+var AUD_damage_res = new Audio('audio/damage.wav');
+var AUD_pew_res = new Audio('audio/pew.wav');
+var AUD_pickup_res = new Audio('audio/pickup.wav');
+var AUD_pow_res = new Audio('audio/pow.wav');
+var AUD_regen_res = new Audio('audio/regen.wav');
+var AUD_reload_complete_res = new Audio('audio/reload_complete.wav');
+var AUD_reload_res = new Audio('audio/reload.mp3');
+var AUD_win1_res = new Audio('audio/win1.wav');
+var AUD_win2_res = new Audio('audio/win2.wav');
+
 function playsound(type) {
     switch(type) {
         case "bam":
-            let AUD_bam = new Audio('audio/bam.wav');
+            let AUD_bam = AUD_bam_res;
             AUD_bam.volume = 0.5;
             AUD_bam.play();
             break;
         case "boom":
-            let AUD_boom = new Audio('audio/boom.wav');
+            let AUD_boom = AUD_boom_res;
             AUD_boom.volume = 0.5;
             AUD_boom.play();
             break;
         case "boom_fire":
-            let AUD_boom_fire = new Audio('audio/boom_fire.wav');
+            let AUD_boom_fire = AUD_boom_fire_res;
             AUD_boom_fire.volume = 0.5;
             AUD_boom_fire.play();
             break;
         case "brrrrr":
-            let AUD_brrrrr = new Audio('audio/brrrrr.wav');
+            let AUD_brrrrr = AUD_brrrrr_res;
             AUD_brrrrr.volume = 0.5;
             AUD_brrrrr.play();
             break;
         case "bubble_bounce":
-            let AUD_bubble_bounce = new Audio('audio/bubble_bounce.wav');
+            let AUD_bubble_bounce = AUD_bubble_bounce_res;
             AUD_bubble_bounce.volume = 0.15;
             AUD_bubble_bounce.play();
             break;
         case "bubble_hit":
-            let AUD_bubble_hit = new Audio('audio/bubble_hit.wav');
+            let AUD_bubble_hit = AUD_bubble_hit_res;
             AUD_bubble_hit.volume = 0.5;
             AUD_bubble_hit.play();
             break;
         case "bubble_pop":
-            let AUD_bubble_pop = new Audio('audio/bubble_pop.wav');
+            let AUD_bubble_pop = AUD_bubble_pop_res;
             AUD_bubble_pop.volume = 0.5;
             AUD_bubble_pop.play();
             break;
         case "bullet_hit":
-            let AUD_bullet_hit = new Audio('audio/bullet_hit.wav');
+            let AUD_bullet_hit = AUD_bullet_hit_res;
             AUD_bullet_hit.volume = 0.5;
             AUD_bullet_hit.play();
             break;
         case "damage":
-            let AUD_damage = new Audio('audio/damage.wav');
+            let AUD_damage = AUD_damage_res;
             AUD_damage.play();
             break;
         case "pew":
-            let AUD_pew = new Audio('audio/pew.wav');
+            let AUD_pew = AUD_pew_res;
             AUD_pew.volume = 0.5;
             AUD_pew.play();
             break;
         case "pickup":
-            let AUD_pickup = new Audio('audio/pickup.wav');
+            let AUD_pickup = AUD_pickup_res;
             AUD_pickup.volume = 0.25;
             AUD_pickup.play();
             break;
         case "pow":
-            let AUD_pow = new Audio('audio/pow.wav');
+            let AUD_pow = AUD_pow_res;
             AUD_pow.volume = 0.5;
             AUD_pow.play();
             break;
         case "regen":
-            let AUD_regen = new Audio('audio/regen.wav');
+            let AUD_regen = AUD_regen_res;
             AUD_regen.volume = 0.5;
             AUD_regen.play();
             break;
         case "reload_complete":
-            let AUD_reload_complete = new Audio('audio/reload_complete.wav');
+            let AUD_reload_complete = AUD_reload_complete_res;
             AUD_reload_complete.volume = 0.5;
             AUD_reload_complete.play();
             break;
         case "reload":
-            let AUD_reload = new Audio('audio/reload.mp3');
+            let AUD_reload = AUD_reload_res;
             AUD_reload.volume = 0.5;
             AUD_reload.play();
             break;
         case "win1":
-            let AUD_win1 = new Audio('audio/win1.wav');
+            let AUD_win1 = AUD_win1_res;
             AUD_win1.volume = 0.5;
             AUD_win1.play();
             break;
         case "win2":
-            let AUD_win2 = new Audio('audio/win2.wav');
+            let AUD_win2 = AUD_win2_res;
             AUD_win2.volume = 0.5;
             AUD_win2.play();
             break;
