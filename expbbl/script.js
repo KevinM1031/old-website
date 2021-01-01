@@ -123,7 +123,7 @@ function updateFunc() {
         if(round > 0 && roundCooldown == 0 && bubbles.length == 0 && !player.isDead) {
 
             roundComplete = true;
-            savedPlayer = JSON.parse(JSON.stringify(player));
+            savedPlayer = player;
             freezeBubbles = true;
             roundCooldown = defaultRoundCooldown;
             playsound("win1");
@@ -179,7 +179,7 @@ function updateFunc() {
                 player.isDead = false;
                                 
                 if(player.lives > 0) {
-                    player = JSON.parse(JSON.stringify(savedPlayer));
+                    player = savedPlayer;
                     player.hp = player.maxHP;
                     bubbles = [];
                     medkits = [];
