@@ -136,7 +136,7 @@ function updateFunc() {
             for(let n = 0; n < numCoins; n++) {
                 let rXVel = getRandomInt(-200, 200)*0.01;
                 let rYVel = getRandomInt(-200, 200)*0.01;
-                coins.push(new Coin(0, 1000, rXVel, rYVel, round*20));
+                coins.push(new Coin(0, 620, rXVel, rYVel, round*20));
             }
         }
 
@@ -192,7 +192,7 @@ function updateFunc() {
                     for(let n = 0; n < numCoins; n++) {
                         let rXVel = getRandomInt(-200, 200)*0.01;
                         let rYVel = getRandomInt(-200, 200)*0.01;
-                        coins.push(new Coin(0, 1000, rXVel, rYVel, round*20));
+                        coins.push(new Coin(0, 620, rXVel, rYVel, round*20));
                     }
                 }
                 
