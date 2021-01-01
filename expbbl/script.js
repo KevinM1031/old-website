@@ -232,13 +232,9 @@ function updateFunc() {
             // Adding new bubbles
             if(roundCooldown == defaultRoundCooldown) {
 
-                // White "default" bubbles
+                // White "default" bubbles (level calculating)
                 let blLvL = Math.ceil(round/2)+2;
                 let blLvR = Math.ceil((round-1)/2)+2;
-                bubbles.push(new Bubble(300, 500, -defaultBubbleSpd, blLvL,
-                                        '#ffffff', 1, 1, 1, 1, blLvL*5));
-                bubbles.push(new Bubble(-300, 500, defaultBubbleSpd, blLvR,
-                                        '#ffffff', 1, 1, 1, 1, blLvR*5));
 
                 // Yellow "fast" bubbles
                 if((round+1)%3 == 0) {
@@ -247,6 +243,8 @@ function updateFunc() {
                                             '#ffff00', 1, 1, 1, 0.5, yeLv*10));
                     bubbles.push(new Bubble(-250, 550, 3*defaultBubbleSpd, yeLv,
                                             '#ffff00', 1, 1, 1, 0.5, yeLv*10));
+                    b1LvL -= 1;
+                    b1LvR -= 1;
                 }
 
                 // Magenta "jumpy" bubbles
@@ -256,6 +254,8 @@ function updateFunc() {
                                             '#ff00ff', 1, 1, 1, 1.7, maLv*15));
                     bubbles.push(new Bubble(-350, 450, 0.5*defaultBubbleSpd, maLv, 
                                             '#ff00ff', 1, 1, 1, 1.7, maLv*15));
+                    b1LvL -= 1;
+                    b1LvR -= 1;
                 }
 
                 // Red "huge" bubbles
@@ -265,6 +265,8 @@ function updateFunc() {
                                             '#ff0000', 2, 1.5, 1, 1, reLv*20));
                     bubbles.push(new Bubble(-150, 600, 1.5*defaultBubbleSpd, reLv, 
                                             '#ff0000', 2, 1.5, 1, 1, reLv*20));
+                    b1LvL -= 1;
+                    b1LvR -= 1;
                 }
 
                 // Gray "tanky" bubbles
@@ -274,6 +276,8 @@ function updateFunc() {
                                             '#888888', 0.5, 3, 1, 1, grLv*25));
                     bubbles.push(new Bubble(-200, 500, defaultBubbleSpd, grLv,
                                             '#888888', 0.5, 3, 1, 1, grLv*25));
+                    b1LvL -= 1;
+                    b1LvR -= 1;
                 }
 
                 // Cyan "powerful" bubbles
@@ -283,7 +287,17 @@ function updateFunc() {
                                             '#00ffff', 1, 1, 2.5, 0.7, cyLv*30));
                     bubbles.push(new Bubble(-300, 400, 0.7*defaultBubbleSpd, cyLv,
                                             '#00ffff', 1, 1, 2.5, 0.7, cyLv*30));
+                    b1LvL -= 1;
+                    b1LvR -= 1;
                 }
+                
+                // White "default" bubbles (spawning)
+                if(b1LvL < 1) b1LvL = 1;
+                if(b1LvR < 1) b1LvR = 1;
+                bubbles.push(new Bubble(300, 500, -defaultBubbleSpd, blLvL,
+                                        '#ffffff', 1, 1, 1, 1, blLvL*5));
+                bubbles.push(new Bubble(-300, 500, defaultBubbleSpd, blLvR,
+                                        '#ffffff', 1, 1, 1, 1, blLvR*5));
             }
 
             // Round complete title
