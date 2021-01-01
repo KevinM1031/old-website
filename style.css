@@ -1,7 +1,13 @@
+html {
+    min-height: 100%;
+}
+
 body {
     font-family: 'Yanone Kaffeesatz';
     font-size: 22px;
     line-height: 1.3;
+    background-size: cover;
+    min-height: 100%;
 }
 
 .background {
