@@ -1541,6 +1541,7 @@ function Player(x, y) {
         playsound("regen");
         floatingTexts.push(new FloatingText("+1 Life", this.xPos, this.yPos,
                            0, 1, 0, 0, 30, 200, '#00ffff'));
+        thus.lives += 1;
     }
     
     this.heal = function(hp) {
