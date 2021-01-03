@@ -588,6 +588,13 @@ function writeEnglish() {
             "On Pause (30%)";
         document.getElementById("proj16t").innerHTML =
             "Successfully obtain a mantis egg pocket, raise, and breed.";
+        
+        document.getElementById("proj17a").innerHTML =
+            "Piano";
+        document.getElementById("proj17s").innerHTML =
+            "In Progress (10%), Started: January 2021";
+        document.getElementById("proj17t").innerHTML =
+            "Write a piano piece without knowing how to play piano.";
     }
 
     else if(fileName == "cave.html") {
@@ -1219,6 +1226,13 @@ function writeKorean() {
             "미래 프로젝트";
         document.getElementById("proj16t").innerHTML =
             "성공적으로 사마귀 알 채집, 부화, 짝짓기, 그리고 산란까지 시키기.";
+        
+        document.getElementById("proj17a").innerHTML =
+            "피아노";
+        document.getElementById("proj17s").innerHTML =
+            "개발중 (10%), 시작일: 2021년 1월";
+        document.getElementById("proj17t").innerHTML =
+            "피아노 치는 법도 모르는 채로 피아노 음악을 작곡.";
     }
 
     else if(fileName == "cave.html") {
