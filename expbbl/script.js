@@ -1520,8 +1520,7 @@ function Player(x, y) {
                     < med.rad+this.rad && !med.pickedUp) {
                 this.heal(this.maxHP*med.hp);
                 med.delete();
-                return false;
-            } else return true;
+            } return true;
         });
     };
     
@@ -1532,8 +1531,7 @@ function Player(x, y) {
                     < coi.rad+this.rad && !coi.pickedUp) {
                 this.addCoins(coi.worth);
                 coi.delete();
-                return false;
-            } else return true;
+            }return true;
         });
     };
     
@@ -1563,7 +1561,7 @@ function Player(x, y) {
     
     this.hurt = function(dmg) {
         this.hp -= dmg;
-        this.invincibility = 50;
+        this.invincibility = 20;
         
         if(this.hp > 0)
             playsound("damage");
@@ -1689,12 +1687,12 @@ function Bubble(x, y, xV, lv, color, radMult, hpMult, dmgMult, jmpMult, worth) {
     
     // Calculates bubble HP based on its level
     this.HPFunction = function() {
-        return defaultBubbleHP * Math.pow(this.lv, 2);
+        return defaultBubbleHP * Math.pow(2, this.lv-1);
     };
     
     // Calculates bubble damage based on its level
     this.dmgFunction = function() {
-        return defaultBubbleDmg * Math.pow(this.lv, 2);
+        return defaultBubbleDmg * Math.pow(2, this.lv-1);
     };
     
     // Calculates bubble jump based on its level
@@ -2678,7 +2676,7 @@ function Brrrrr() {
             let rXVel = this.vel + getRandomInt(-this.spread, this.spread)*0.1;
             let rYVel = 0.1 + getRandomInt(-this.spread, this.spread)*0.1;
             bullets.push(new Bullet(p.xPos+i*6, p.yPos,
-                                    rXVel, rYVel, this.dmg, 2, '#ffff00'));
+                                    rXVel, rYVel, this.dmg, 3, '#ffff00'));
             playsound("brrrrr");
         }
 
@@ -2696,7 +2694,7 @@ function Brrrrr() {
             let rXVel = 0.1 + getRandomInt(-this.spread, this.spread)*0.1;
             let rYVel = this.vel + getRandomInt(-this.spread, this.spread)*0.1;
             bullets.push(new Bullet(p.xPos, p.yPos+i*6,
-                                    rXVel, rYVel, this.dmg, 2, '#ffff00'));
+                                    rXVel, rYVel, this.dmg, 3, '#ffff00'));
             playsound("brrrrr");
         }
         
@@ -2714,7 +2712,7 @@ function Brrrrr() {
             let rXVel = -this.vel + getRandomInt(-this.spread, this.spread)*0.1;
             let rYVel = 0.1 + getRandomInt(-this.spread, this.spread)*0.1;
             bullets.push(new Bullet(p.xPos-i*6, p.yPos,
-                                    rXVel, rYVel, this.dmg, 2, '#ffff00'));
+                                    rXVel, rYVel, this.dmg, 3, '#ffff00'));
             playsound("brrrrr");
         }
         
@@ -2732,7 +2730,7 @@ function Brrrrr() {
             let rXVel = 0.1 + getRandomInt(-this.spread, this.spread)*0.1;
             let rYVel = -this.vel + getRandomInt(-this.spread, this.spread)*0.1;
             bullets.push(new Bullet(p.xPos, p.yPos-i*6,
-                                    rXVel, rYVel, this.dmg, 2, '#ffff00'));
+                                    rXVel, rYVel, this.dmg, 3, '#ffff00'));
             playsound("brrrrr");
         }
         
