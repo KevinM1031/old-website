@@ -1811,8 +1811,8 @@ function Dragonfly(x, y, xv, yv, t, s, dir, isGone, act, actDur) {
 
 function spawnDragonfly() {
     if(dragonflies.length > 20) return;
-    let x = canvas.width-90;
-    let y = canvas.height-45;
+    let x = canvas.width-85;
+    let y = canvas.height-75;
     dragonflies.push(new Dragonfly(x, y, 0, 0, 0, 1, "right", false, "idling", 0));
 }
 
@@ -1943,7 +1943,7 @@ function Fly(x, y, xv, yv, t, s, dir, isDead, act, actDur) {
 function spawnFly() {
     if(flies.length > 100) return;
     let x = canvas.width-123;
-    let y = canvas.height-40;
+    let y = canvas.height-75;
     flies.push(new Fly(x, y, 0, 0, 0, 1, "right", false, "idling", 0));
 }
 
