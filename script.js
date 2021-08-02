@@ -522,7 +522,7 @@ function writeEnglish() {
         document.getElementById("proj07a").innerHTML =
             "Lithops Cultivation Project";
         document.getElementById("proj07s").innerHTML =
-            "Work In Progress (5%), Started: September 2020";
+            "Work In Progress (25%), Started: September 2020";
         document.getElementById("proj07t").innerHTML =
             "Random varieties of lithops seeds are planted and will be grown in the following years to come. Notorious as one of the most difficult succulents to grow, I am essentially entering the succulent world in hardmode.";
         
@@ -534,11 +534,11 @@ function writeEnglish() {
             "Perhaps with a massive tank of over 400L, a miniature version of the Southern Japanese forest will be recreated. Features include mossy trees and rocks, LED-lighted traditional cabins with a campfire, and a hot springs river flowing on the side. This will be a no-fauna setup.";
         
         document.getElementById("proj09a").innerHTML =
-            "Popcoral Jukebox";
+            "Swamp River Aquarium";
         document.getElementById("proj09s").innerHTML =
-            "Future Project";
+            "Work In Progress (95%), Started: March 2020";
         document.getElementById("proj09t").innerHTML =
-            "An Astroneer's Pre-Alpha Popcoral figurine music player which randomly plays background music in Astroneer.";
+            "With an existing 40L tank, a swamp river environment will be recreated. May also be used to breed guppies.";
         
         document.getElementById("proj10a").innerHTML =
             "Orange Justice in a Box";
@@ -578,7 +578,7 @@ function writeEnglish() {
         document.getElementById("proj15a").innerHTML =
             "Macroevolution Simulator";
         document.getElementById("proj15s").innerHTML =
-            "Future Project";
+            "Work In Progress (80%), Started: July 2021";
         document.getElementById("proj15t").innerHTML =
             "Create an optimized, visible computer simulation of virtual organisms reproducing, mutating, and undergoing evolution through natural selection. Instead of predetermining phenotypes such as speed, size, etc., raw sequences of genetic information will be used. These information will be the blueprint of creating protein molecules, becoming the building blocks of a single organism. Optionally, this simulation may be visually polished for real-time display, acting as a virtual terrarium.";
         
@@ -592,9 +592,9 @@ function writeEnglish() {
         document.getElementById("proj17a").innerHTML =
             "Piano";
         document.getElementById("proj17s").innerHTML =
-            "In Progress (10%), Started: January 2021";
+            "Work In Progress (40%), Started: January 2021";
         document.getElementById("proj17t").innerHTML =
-            "Write a piano piece without knowing how to play piano.";
+            "Learn piano.";
     }
 
     else if(fileName == "cave.html") {
@@ -1172,11 +1172,11 @@ function writeKorean() {
             "400리터 이상 어항을 습한 남일본 생태계와 비슷하게 미니어쳐 숲을 만들어내기. 다양한 이끼, 직접 (대충) 키워낸 분재, 흐르는 온천수, 그리고 LED 조명이 들어오는 전통 가옥들을 포함한다. 동물은 넣지 않을 것";
         
         document.getElementById("proj09a").innerHTML =
-            "Popcoral Jukebox";
+            "슾지 개울가 어항";
         document.getElementById("proj09s").innerHTML =
-            "미래 프로젝트";
+            "개발중 (95%), 시작일: 2021년 3월";
         document.getElementById("proj09t").innerHTML =
-            "게임에 나오는 식물 피규어가 달린 자동 음악 재생기.";
+            "비어있는 40리터 어항을 습지 개울가처럼 꾸미기. 구피 브리딩용.";
         
         document.getElementById("proj10a").innerHTML =
             "Orange Justice in a Box";
@@ -1216,7 +1216,7 @@ function writeKorean() {
         document.getElementById("proj15a").innerHTML =
             "대진화 시뮬레이션";
         document.getElementById("proj15s").innerHTML =
-            "미래 프로젝트";
+            "개발중 (80%), 시작일: 2021년 7월";
         document.getElementById("proj15t").innerHTML =
             "생식, 변이, 그리고 자연선택으로 이루어진 최적화된 2D 가상 대진화 시뮬레이션. 기존의 시뮬레이션들과는 달리 유전자의 표현형들(속도, 크기, 등)을 미리 정의하지 않고 유전정보만을 기반으로 단백질을 형성하여 생명체를 이루는 방식으로 소진화 뿐만 아니라 대진화를 가능하게 한다. 원하는 바 대로 성공할 경우 UI 등을 개선시켜 가상 테라리움으로 만들 수 있다.";
         
@@ -1230,9 +1230,9 @@ function writeKorean() {
         document.getElementById("proj17a").innerHTML =
             "피아노";
         document.getElementById("proj17s").innerHTML =
-            "개발중 (10%), 시작일: 2021년 1월";
+            "개발중 (40%), 시작일: 2021년 5월";
         document.getElementById("proj17t").innerHTML =
-            "피아노 치는 법도 모르는 채로 피아노 음악을 작곡.";
+            "피아노 배우기.";
     }
 
     else if(fileName == "cave.html") {
